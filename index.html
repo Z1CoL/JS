@@ -4,80 +4,159 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
   </head>
   <body>
-    <button onclick="">Submit</button>
+    <div class="buttons-direction">
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sum();">
+        SOLUTION-1
+      </button>
+      <button class="button is-one-quarter mt-5 ml-3" onclick="EvenOdd();">
+        SOLUTION-2
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="Level();">
+        SOLUTION-3
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="Login();">
+        SOLUTION-4
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="LargerNum();">
+        SOLUTION-5
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="TrafficLight();">
+        SOLUTION-6
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="RockAndPaper();">
+        SOLUTION-7
+      </button>
+
+      <div class="columns mt-3">
+        <div class="column is-two-thirds">
+          <article class="message">
+            <div class="message-header">
+              <p>Problem</p>
+            </div>
+
+            <div class="message-body" id="result"></div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <style></style>
+
+    <script>
+      function print() {
+        document.getElementById("result").innerText = output;
+      }
+
+      function sum() {
+        let a = 100;
+        let b = 50;
+        let sum = a + b;
+
+        output = sum;
+        print();
+      }
+
+      function EvenOdd() {
+        let answer;
+        let a = prompt();
+        b = Number(a);
+        if (b % 2 == 0) {
+          answer = "tegsh";
+          console.log("Even");
+        } else {
+          answer = "sondgoi";
+          console.log("Odd");
+        }
+        output = answer;
+        print();
+      }
+
+      function Level() {
+        let nas = prompt();
+        a = Number(nas);
+        if (a < 13) {
+          answer = "Child";
+        }
+        if (a >= 13 && a <= 19) {
+          answer = "Teen";
+        }
+        if (a >= 20 && a <= 64) {
+          answer = "Adult";
+        }
+        if (a > 65) {
+          answer = "Senior";
+        }
+        output = answer;
+        print();
+      }
+
+      function Login() {
+        let username = prompt("Username");
+        let password = prompt("Password");
+
+        if (username === "admin" && password === "pass123") {
+          answer = "Login successful";
+        } else {
+          answer = "Incorrect credentials";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function LargerNum() {
+        let num1 = prompt("Number 1");
+        let num2 = prompt("Number 2");
+
+        a = Number(num1);
+        b = Number(num2);
+
+        if (a > b && a < b) {
+          answer = a;
+        } else {
+          answer = b;
+        }
+
+        output = answer;
+        print();
+      }
+
+      function TrafficLight() {
+        let light = prompt("light");
+
+        if (light === "red") {
+          answer = "Stop";
+        }
+        if (light === "yellow") {
+          answer = "Wait";
+        }
+        if (light === "green") {
+          answer = "Go";
+        }
+        output = answer;
+        print();
+      }
+
+      function RockAndPaper() {
+        let player2 = prompt("player 1");
+        let player1 = prompt("player 2");
+
+        
+
+        output = answer;
+        print();
+      }
+    </script>
   </body>
 </html>
-
-<script>
-  let score = prompt("Please enter your score");
-  let drom = prompt("drom tentssen eseh?");
-  console.log(18 <= score && drom >= 1);
-
-  /* operator
-    == bolhoor torol hargalzahgui utgiig haritsuulna 
-    === torol hargalzan hoorond haritsuulna 
-    <=
-    >=
-
-    let age = prompt("Please enter your age");
-    let invitation = prompt("Please do you have a invitation");
-    console.log (21 <= age && invitation < 1 );
-
-      let username = prompt("Please enter username");
-  let password = prompt("Please enter username");
-
-  let adminName = "Bilguun";
-  let adminPass = "Pass123";
-
-  console.log(username == adminName);
-  console.log(password == adminPass);
-
-
-
-    logic operator 
-    ||  or operator
-    let a = 5, b = 10
-    (a != b ) && (a < b ); true
-    (a > b) || (a == b); false
-    (a < b) || (a == b); true
-    !(a)
-    */
-  /*
-  let price = 40000;
-  let sale = 30;
-  let totalSale = (price * sale) / 100;
-  console.log(price - totalSale);
-
-  let score1 = 30;
-  let score2 = 30;
-  let score3 = 30;
-  console.log((score1 + score2 + score3) / 3);
-
-  let height = 3;
-  let width = 5;
-  console.log(height * width);
-
-  let celsius = 21;
-  console.log(celsius * 1.8 + 32);
-
-  let min = 200;
-  console.log(min / 60); */
-
-  /* Function
-  function displayInfo() {
-    console.log(name + str);
-    console.log(age);
-    console.log(num + age);
-    console.log(married);
-
-    // Variable
-  let name = "Saraa ";
-  let age = 19;
-  let married = false;
-  let num = 12;
-  let str = "Tomas";
-  }
-  */
-</script>
