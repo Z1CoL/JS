@@ -38,6 +38,38 @@
         SOLUTION-7
       </button>
 
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol8();">
+        SOLUTION-8
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol9();">
+        SOLUTION-9
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol10();">
+        SOLUTION-10
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol11();">
+        SOLUTION-11
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol12();">
+        SOLUTION-12
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol13();">
+        SOLUTION-13
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol14();">
+        SOLUTION-14
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol15();">
+        SOLUTION-15
+      </button>
+
       <div class="columns mt-3">
         <div class="column is-two-thirds">
           <article class="message">
@@ -59,11 +91,22 @@
       }
 
       function sum() {
-        let a = 100;
-        let b = 50;
-        let sum = a + b;
+        let score = prompt();
+        let answer;
 
-        output = sum;
+        if (score >= 90 && score == 100) {
+          asnwer = "A";
+        } else if (score >= 80) {
+          answer = "B";
+        } else if (score >= 70) {
+          answer = "C";
+        } else if (score >= 60) {
+          answer = "D";
+        } else {
+          answer = "F";
+        }
+
+        output = answer;
         print();
       }
 
@@ -148,10 +191,105 @@
         print();
       }
 
-      function RockAndPaper() {
+      function sol() {
         let player2 = prompt("player 1");
         let player1 = prompt("player 2");
 
+        output = answer;
+        print();
+      }
+
+      calculator;
+      function sol8() {
+        let num1 = prompt("num1");
+        let op = prompt("op");
+        let num2 = prompt("num2");
+        let answer;
+
+        a = Number(num1);
+        b = Number(num2);
+
+        if (op === "+") {
+          answer = a + b;
+        } else if (op === "-") {
+          answer = a - b;
+        } else if (op === "*") {
+          answer = a * b;
+        } else if (op === "/") {
+          answer = a / b;
+        }
+        output = answer;
+        print();
+      }
+
+      function sol9() {
+        let day = prompt("day?");
+
+        if (day == 1) {
+          answer = "Monaday";
+        } else if (day == 2) {
+          answer = "Tuesday";
+        } else if (day == 3) {
+          answer = "Wednesday";
+        } else if (day == 4) {
+          answer = "Thursday";
+        } else if (day == 5) {
+          answer = "Friday";
+        } else if (day == 6) {
+          answer = "Saturday";
+        } else if (day == 7) {
+          answer = "Sunday";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol10() {
+        let year = prompt("please enter year");
+        a = Number(year);
+
+        if (a % 4 == 0 && a % 100 != 0) {
+          answer = "ondor jil";
+        } else {
+          answer = "ondor jil bish";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol11() {
+        let area1 = prompt("player 1");
+        let area2 = prompt("player 1");
+        let area3 = prompt("player 1");
+
+        a = Number(area1);
+        b = Number(area2);
+        c = Number(area3);
+
+        if (a + b > c || a + b > c || a + b > c) {
+          if (a == b && b == c) {
+            answer = "Equilateral";
+          } else if (a == b) {
+            answer = "Isosceles";
+          } else if (a == c) {
+            answer = "Isosceles";
+          } else if (c == b) {
+            answer = "Isosceles";
+          } else if (a != b && b != c) {
+            answer = "scalene";
+          }
+        } else {
+          answer = "Invalid triange";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol() {
+        let player2 = prompt("player 1");
         
 
         output = answer;
