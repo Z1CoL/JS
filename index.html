@@ -70,6 +70,22 @@
         SOLUTION-15
       </button>
 
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol16();">
+        SOLUTION-16
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol17();">
+        SOLUTION-17
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol17();">
+        SOLUTION-18
+      </button>
+
+      <button class="button is-one-quarter mt-5 ml-3" onclick="sol17();">
+        SOLUTION-19
+      </button>
+
       <div class="columns mt-3">
         <div class="column is-two-thirds">
           <article class="message">
@@ -260,24 +276,20 @@
       }
 
       function sol11() {
-        let area1 = prompt("player 1");
-        let area2 = prompt("player 1");
-        let area3 = prompt("player 1");
+        let area1 = prompt("a");
+        let area2 = prompt("b");
+        let area3 = prompt("c");
 
         a = Number(area1);
         b = Number(area2);
         c = Number(area3);
 
-        if (a + b > c || a + b > c || a + b > c) {
+        if (a + b > c || a + c > b || a + b > c || a <= 0 || b <= 0 || c <= 0) {
           if (a == b && b == c) {
             answer = "Equilateral";
-          } else if (a == b) {
+          } else if (a == b || c == b || a == c) {
             answer = "Isosceles";
-          } else if (a == c) {
-            answer = "Isosceles";
-          } else if (c == b) {
-            answer = "Isosceles";
-          } else if (a != b && b != c) {
+          } else if (a != b && b != c && a != c) {
             answer = "scalene";
           }
         } else {
@@ -288,9 +300,105 @@
         print();
       }
 
+      function sol12() {
+        let time = prompt("please enter time");
+
+        a = Number(time);
+
+        if (a === 12) {
+          answer = "12 PM";
+        } else if (a === 0) {
+          answer = "12 AM";
+        } else if (a > 12) {
+          answer = a - 12 + " AM";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol13() {
+        let month = prompt("please enter month");
+
+        if (month == 2) {
+          answer = "28/29";
+        } else if (
+          month == 12 &&
+          month == 10 &&
+          month == 8 &&
+          month == 7 &&
+          month == 5 &&
+          month == 3 &&
+          month == 1
+        ) {
+          answer = 31;
+        } else {
+          answer = 30;
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol() {
+        let amount = prompt("please enter amount");
+        a = Number(amount);
+
+        if (a === 10000) {
+          if (a % 5000 === 0) {
+          } else {
+          }
+        } else {
+          answer = "Must leave at lease 10,000 in balance";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol15() {
+        let bor = prompt("please enter borluulalt");
+        a = Number(bor);
+
+        if (a >= 5000) {
+          a * 0.12;
+          answer = "Special " + a + "$";
+        } else if (a >= 3000 && a <= 4999) {
+          a * 0.08;
+          answer = "Good " + a + "$";
+        } else if (a <= 2999 && a >= 1000) {
+          a * 0.05;
+          answer = "middle " + a + "$";
+        } else {
+          a * 0.02;
+          answer = "Needs improvement" + a + "$";
+        }
+
+        output = answer;
+        print();
+      }
+
+      function sol16() {
+        let dis = prompt("please enter price");
+        a = Number(dis);
+
+        if (a > 1000) {
+          a * 0.15;
+          answer = a;
+        } else if (a >= 1000 && a <= 500) {
+          a * 0.1;
+          answer = a;
+        } else {
+          a * 0.05;
+          answer = a;
+        }
+        output = answer;
+        print();
+      }
+
       function sol() {
         let player2 = prompt("player 1");
-        
+        let player1 = prompt("player 2");
 
         output = answer;
         print();
@@ -298,3 +406,11 @@
     </script>
   </body>
 </html>
+<!--      function sol() {
+        let player2 = prompt("player 1");
+        let player1 = prompt("player 2");
+
+        output = answer;
+        print();
+      }
+-->
