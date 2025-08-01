@@ -78,7 +78,7 @@
         SOLUTION-17
       </button>
 
-            <div class="line">
+      <div class="line">
         <button class="button is-one-quarter mt-5 ml-3" onclick="play();">
           play
         </button>
@@ -439,80 +439,23 @@
       }
 
       function play() {
-        let btn1 = prompt("1 x or o");
-        let btn3 = prompt("3 x or o");
-        let btn4 = prompt("4 x or o");
-        let btn5 = prompt("5 x or o");
-        let btn6 = prompt("6 x or o");
-        let btn7 = prompt("7 x or o");
-        let btn8 = prompt("8 x or o");
-        let btn9 = prompt("9 x or o");
+        let btn1 = prompt("move-1 x or o");
+        let btn2 = prompt("move-2 x or o");
+        
 
-        if (btn1 == "x") {
-          if (btn1 == btn2 && btn1 == btn3) {
-            answer = "x win";
-          } else if (btn1 == btn4 && btn1 == btn7) {
-            answer = "x win";
-          } else if (btn1 == btn5 && btn1 == btn9) {
-            answer = "x win";
-          }
-        }else if (btn1 == "o") {
-          if (btn1 == btn2 && btn1 == btn3) {
-            answer = "o win";
-          } else if (btn1 == btn4 && btn1 == btn7) {
-            answer = "o win";
-          } else if (btn1 == btn5 && btn1 == btn9) {
-            answer = "o win";
-          }
-        }else if (btn5 == "x") {
-          if (btn5 == btn2 && btn5 == btn8) {
-            answer = "x win";
-          } else if (btn5 == btn4 && btn5 == btn6) {
-            answer = "x win";
-          } else if (btn5 == btn3 && btn5 == btn7) {
-            answer = "x win";
-          }
-        }else if (btn5 == "o") {
-          if (btn5 == btn2 && btn5 == btn8) {
-            answer = "o win";
-          } else if (btn5 == btn4 && btn5 == btn6) {
-            answer = "o win";
-          } else if (btn5 == btn3 && btn5 == btn7) {
-            answer = "o win";
-          }
-        }else if (btn9 == "x") {
-          if (btn9 == btn3 && btn9 == btn6) {
-            answer = "x win";
-          } else if (btn9 == btn7 && btn9 == btn9) {
-            answer = "x win";
-          }
-        }else if (btn9 == "o") {
-          if (btn9 == btn3 && btn9 == btn6) {
-            answer = "o win";
-          } else if (btn9 == btn7 && btn9 == btn9) {
-            answer = "o win";
-          }
-        }
+
 
         output = answer;
         print();
       }
 
-      /*
-      1  2  3
-      4  5  6
-      7  8  9
-
-
-      */
     </script>
   </body>
 </html>
-<!--      function sol() {
+<!--function sol() {
         let player2 = prompt("player 1");
         let player1 = prompt("player 2");
 
         output = answer;
         print();
-      }
--->
+      }-->
