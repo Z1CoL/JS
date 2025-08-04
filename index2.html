@@ -28,35 +28,34 @@
         </button>
       </div>
       <div class="line">
-        <button class="button is-one-quarter mt-5 ml-3" id="4" onclick="c();">
+        <button class="button is-one-quarter mt-5 ml-3" id="4" onclick="c4();">
           ?
         </button>
 
-        <button class="button is-one-quarter mt-5 ml-3" id="5" onclick="c();">
+        <button class="button is-one-quarter mt-5 ml-3" id="5" onclick="c5();">
           ?
         </button>
 
-        <button class="button is-one-quarter mt-5 ml-3" id="6" onclick="c();">
+        <button class="button is-one-quarter mt-5 ml-3" id="6" onclick="c6();">
           ?
         </button>
       </div>
       <div class="line">
-        <button class="button is-one-quarter mt-5 ml-3" id="7" onclick="c();">
+        <button class="button is-one-quarter mt-5 ml-3" id="7" onclick="c7();">
           ?
         </button>
 
-        <button class="button is-one-quarter mt-5 ml-3" id="8" onclick="c();">
+        <button class="button is-one-quarter mt-5 ml-3" id="8" onclick="c8();">
           ?
         </button>
 
-        <button class="button is-one-quarter mt-5 ml-3" id="9" onclick="c();">
+        <button class="button is-one-quarter mt-5 ml-3" id="9" onclick="c9();">
           ?
         </button>
       </div>
     </div>
 
     <style>
-
       h1 {
         padding-left: 50px;
       }
@@ -74,15 +73,106 @@
     </style>
 
     <script>
+      const button1 = document.getElementById("1");
+      const button2 = document.getElementById("2");
+      const button3 = document.getElementById("3");
+      const button4 = document.getElementById("4");
+      const button5 = document.getElementById("5");
+      const button6 = document.getElementById("6");
+      const button7 = document.getElementById("7");
+      const button8 = document.getElementById("8");
+      const button9 = document.getElementById("9");
+
+      let player = "O";
 
       function c1() {
-        btn1 = "x";
+        button1.innerText = player;
 
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
       }
 
       function c2() {
-        btn2 = "x";
+        button2.innerText = player;
 
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c3() {
+        button3.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c4() {
+        button4.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c5() {
+        button5.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c6() {
+        button6.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c7() {
+        button7.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c8() {
+        button8.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
+      }
+
+      function c9() {
+        button9.innerText = player;
+
+        if (player === "X") {
+          let player = "O";
+        } else {
+          player = "X";
+        }
       }
     </script>
   </body>
