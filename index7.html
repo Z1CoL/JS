@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <button class="button m-5" onclick="Adult();">Adult</button>
+
+    <button class="button m-5" onclick="printAll();">All</button>
+
+    <table class="table is-bordered" id="studentsList"></table>
+
+    <script>
+      const students = [
+        { name: "Bat", surname: "Erdene", age: 25, birthday: "1999-03-14" },
+        { name: "Anu", surname: "Tungalag", age: 22, birthday: "2002-06-25" },
+        { name: "Bold", surname: "Dorj", age: 28, birthday: "1996-01-08" },
+        {
+          name: "Sarnai",
+          surname: "Altangerel",
+          age: 31,
+          birthday: "1993-11-02",
+        },
+        {
+          name: "Temuulen",
+          surname: "Ganzorig",
+          age: 27,
+          birthday: "1997-04-19",
+        },
+        { name: "Oyun", surname: "Delger", age: 24, birthday: "2000-09-12" },
+        {
+          name: "Gantulga",
+          surname: "Batsaikhan",
+          age: 30,
+          birthday: "1994-02-05",
+        },
+        { name: "Solongo", surname: "Purev", age: 26, birthday: "1998-07-21" },
+        {
+          name: "Munkhbat",
+          surname: "Enkhbayar",
+          age: 33,
+          birthday: "1991-10-15",
+        },
+        { name: "Enkhzul", surname: "Sukh", age: 21, birthday: "2003-05-30" },
+        {
+          name: "Tuvshin",
+          surname: "Narangerel",
+          age: 29,
+          birthday: "1995-12-01",
+        },
+        {
+          name: "Khulan",
+          surname: "Erkhembayar",
+          age: 23,
+          birthday: "2001-08-10",
+        },
+        { name: "Bilegt", surname: "Altan", age: 32, birthday: "1992-03-28" },
+        {
+          name: "Uugantsetseg",
+          surname: "Buyandelger",
+          age: 25,
+          birthday: "1999-06-17",
+        },
+        {
+          name: "Erdenebat",
+          surname: "Munkhjargal",
+          age: 34,
+          birthday: "1990-02-09",
+        },
+        { name: "Nomin", surname: "Chuluun", age: 20, birthday: "2004-09-27" },
+        {
+          name: "Batbayar",
+          surname: "Gantumur",
+          age: 27,
+          birthday: "1997-11-13",
+        },
+        {
+          name: "Tsetseg",
+          surname: "Erdenechimeg",
+          age: 28,
+          birthday: "1996-04-06",
+        },
+        {
+          name: "Ulzii",
+          surname: "Purevdorj",
+          age: 26,
+          birthday: "1998-12-19",
+        },
+        { name: "Amar", surname: "Dorjbat", age: 31, birthday: "1993-08-03" },
+        {
+          name: "Enkhmaa",
+          surname: "Lkhagvasuren",
+          age: 22,
+          birthday: "2002-10-22",
+        },
+        {
+          name: "Chinbat",
+          surname: "Otgonbayar",
+          age: 24,
+          birthday: "2000-01-16",
+        },
+        { name: "Delger", surname: "Galsan", age: 33, birthday: "1991-05-07" },
+        {
+          name: "Bayasgalan",
+          surname: "Tserendorj",
+          age: 29,
+          birthday: "1995-07-29",
+        },
+        {
+          name: "Sodnom",
+          surname: "Erdenetuya",
+          age: 30,
+          birthday: "1994-09-04",
+        },
+      ];
+
+      let All = "";
+      let dult = "";
+      function printAll() {
+        for (let i = 0; i < students.length; i++) {
+          All += `
+            <tr>
+                <td>${students[i].name}</td>
+                <td>${students[i].surname}</td>
+                <td>${students[i].age}</td>
+            </tr>    
+            `;
+        }
+        document.getElementById("studentsList").innerHTML = All;
+      }
+
+      function Adult() {
+        for (let z = 0; z < students.length; z++) {
+          if (students[z].age >= 25) {
+            dult += `
+            <tr>
+                <td>${students[z].name}</td>
+                <td>${students[z].surname}</td>
+                <td>${students[z].age}</td>
+            </tr>
+            `;
+          }
+        }
+        document.getElementById("studentsList").innerHTML = dult;
+      }
+      printAll();
+    </script>
+  </body>
+</html>

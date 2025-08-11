@@ -4,8 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
   </head>
   <body>
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+
+        </tr>
+      </thead>
+    </table>
+
     <script>
       function sol1() {
         const arr = [2, 4, 5, 7, 1];
@@ -107,10 +119,24 @@
         console.log(result[1]);
       }
 
-      function sol10() {
+      function sol11() {
+        const ages = [32, 33, 16, 40];
+
+        function checkAge(age) {
+          return age > 18;
+        }
+
+        ages.every(checkAge);
+        console.log();
       }
 
-      sol10();
+      function sol12() {
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let text = fruits.constructor;
+
+        console.log(text);
+      }
+      sol11();
     </script>
   </body>
 </html>
