@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sol1() {
+        const arr = [2, 4, 5, 7, 1];
+        const prefixSum = new Array(arr.length);
+
+        prefixSum[0] = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          prefixSum[i] = prefixSum[i - 1] + arr[i];
+        }
+      }
+
+      function sol2() {
+        let max = 0;
+        const arr = [1, 5, 3, 9, 2];
+        for (let i = 0; i < arr.length; i++) {
+          if (max < arr[i]) {
+            max = arr[i];
+          }
+        }
+        console.log(max);
+      }
+
+      function sol3() {
+        let sum = 0;
+        const arr = [1, 5, 3, 9, 2];
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        console.log(sum);
+      }
+
+      function sol4() {
+        let sum = 0;
+        const arr = [1, 5, 3, 9, 2];
+        for (let i = 0; i < arr.length; i++) {}
+        console.log(sum);
+      }
+
+      function sol5() {
+        const target = "Dorj";
+        const arr = ["Bold", "Dorj", "Sarnai"];
+        for (let i = 0; i < arr.length; i++) {
+          if (target === arr[i]) {
+            console.log(true);
+          }
+        }
+      }
+
+      function sol6() {
+        const target = prompt();
+        a = Number(target);
+        count = 0;
+        const arr = [1, 2, 2, 3, 2];
+        for (let i = 0; i < arr.length; i++) {
+          if (a === arr[i]) {
+            count++;
+          }
+        }
+        console.log(count);
+      }
+
+      function sol7() {
+        let n = prompt();
+        const arr = [0, 1];
+
+        for (let i = 2; i < n; i++) {
+          arr.push(arr[i - 1] + arr[i - 2]);
+        }
+        console.log(arr);
+      }
+
+      function sol8() {
+        const arr = [20000, 25000, 30000, 15000, 10000, 15000, 10000];
+        const sum = new Array(arr.length);
+        sum[4] = arr[4];
+
+        for (i = 5; i < arr.length; i++) {
+          sum[i] = sum[i - 1] + arr[i];
+        }
+        console.log(sum);
+      }
+
+      function sol9() {
+        const nums = [10, 4, 8, 3];
+        const leftSum = new Array(nums.length);
+        const rightSum = new Array(nums.length);
+        const n = nums.length;
+        const result = new Array(nums.length);
+
+        // leftsum oloh
+
+        rightSum[0] = leftSum[0] = 0;
+        if (leftSum[0] == 0) {
+          for (let i = 1; i < nums.length; i++) {
+            result[i] = nums[i] + leftSum[i];
+          }
+        }
+
+        console.log(result[1]);
+      }
+
+      function sol10() {
+      }
+
+      sol10();
+    </script>
+  </body>
+</html>

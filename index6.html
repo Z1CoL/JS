@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sol1() {
+        let w = prompt("w");
+        let l = prompt("l");
+        let result = "";
+        for (let row = 1; row <= l; row++) {
+          for (let i = 1; i <= w; i++) {
+            if (i == 1 || row == 1 || row == w || i == l) {
+              result = result + "* ";
+            } else {
+              result = result + "  ";
+            }
+          }
+          result = result + "\n";
+        }
+        console.log(result);
+      }
+
+      function sol2() {
+        let w2 = prompt();
+        let l2 = prompt();
+        let result = "";
+        for (let row = 1; row <= l2; row++) {
+          for (let i = 1; i <= w2; i++) {
+            if (i == 1 || row == 1 || row == w2 || i == l2) {
+              result = result + "* ";
+            } else if (
+              (i == 2 && row == 2) ||
+              (i == 3 && row == 3) ||
+              (i == 4 && row == 4)
+            ) {
+              result = result + "* ";
+            } else {
+              result = result + "  ";
+            }
+          }
+          result = result + "\n";
+        }
+        console.log(result);
+      }
+
+      function sol3() {
+        let w = 5; // prompt("w");
+        let l = 5; // prompt("l");
+        let n = 5;
+        let result = "";
+        let spc = "";
+        for (let row = 1; row <= l; row++) {
+          for (let k = 0; k < n - row; k++) {
+            result = result + "  ";
+          }
+          for (let i = 1; i <= w; i++) {
+            result = result + "* ";
+          }
+          result = result + "\n";
+        }
+        console.log(result);
+      }
+
+      function sol4() {
+        let w = 5; // prompt("w");
+        let l = 5; // prompt("l");
+        let n = 5;
+        let result = "";
+        let spc = "";
+        for (let row = 1; row <= l; row++) {
+          for (let k = 0; k < n - row; k++) {
+            result = result + "  ";
+          }
+          for (let i = 1; i <= w; i++) {
+            if (i == 1 || row == 1 || row == w || i == l) {
+              result = result + "* ";
+            } else {
+              result = result + "  ";
+            }
+          }
+          result = result + "\n";
+        }
+        console.log(result);
+      }
+
+      function sol5() {
+        let w = 5; // prompt("w");
+        let l = 5; // prompt("l");
+        let n = 5;
+        let result = "";
+        let spc = "";
+        for (let row = 1; row <= l; row++) {
+          for (let k = 5; k < n + row; k++) {
+            result = result + "  ";
+          }
+          for (let i = 1; i <= w; i++) {
+            result = result + "* ";
+          }
+          result = result + "\n";
+        }
+        console.log(result);
+      }
+
+      function sol6() {
+        let w = 5; // prompt("w");
+        let l = 5; // prompt("l");
+        let n = 5;
+        let result = "";
+        let spc = "";
+        for (let row = 1; row <= l; row++) {
+          for (let k = 5; k < n + row; k++) {
+            result = result + "  ";
+          }
+          for (let i = 1; i <= w; i++) {
+            if (i == 1 || row == 1 || row == w || i == l) {
+              result = result + "* ";
+            } else {
+              result = result + "  ";
+            }
+          }
+          result = result + "\n";
+        }
+        console.log(result);
+      }
+
+      sol6();
+
+      function sol7() {
+        let w = 5; // prompt("w");
+        let result = "";
+        if (w > 1) {
+          for (let row = 1; row <= w; row++) {
+            for (let l = 1; l <= row; l++) {
+              result += "* ";
+            }
+            result += "\n";
+          }
+        }
+        console.log(result);
+      }
+
+      sol7();
+
+      function sol8() {
+        let w = 5; // prompt("w");
+        let result = "";
+        if (w > 1) {
+          for (let i = 1; i <= w; i++) {
+            for (let l = 1; l <= w - i; l++) {
+              result += "  ";
+            }
+
+            for (let k = 1; k <= i; k++) {
+              result += "* ";
+            }
+            result += "\n";
+          }
+        }
+        console.log(result);
+      }
+
+      sol8();
+
+      function sol9() {
+        let w = 5; // prompt("w");
+        let result = "";
+        if (w > 1) {
+          for (let row = 1; row <= w; row++) {
+            for (let l = 1; l <= row; l++) {
+              result += "* ";
+            }
+            result += "\n";
+          }
+        }
+        console.log(result);
+      }
+
+      sol9();
+
+      function sol12() {
+        let w = 5; // prompt("w");
+        let result = "";
+        if (w > 1) {
+          for (let row = 1; row <= w; row++) {
+            for (let l = 1; l <= w - row; l++) {
+              result += " ";
+            }
+
+            for (let l = 1; l <= row; l++) {
+              result += "* ";
+            }
+            result += "\n";
+          }
+        }
+        console.log(result);
+      }
+
+      sol12();
+
+      function sol13() {
+        let w = 5; // prompt("w");
+        let result = "";
+        if (w > 1) {
+          for (let row = 1; row <= w; row++) {
+            for (let l = 1; l <= w - row; l++) {
+              result += " ";
+            }
+          }
+
+          for (let l = 1; l <= row; l++) {
+            result += "* ";
+          }
+          result += "\n";
+        }
+        console.log(result);
+      }
+
+      sol13();
+    </script>
+  </body>
+</html>
