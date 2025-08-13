@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const totalSubarraySum = (nums) => {
+        let totalSum = 0;
+        for (let i = 0; i < nums.length; i++) {
+          let start = Math.max(0, i - nums[i]);
+          let sum = 0;
+          for (let j = start; j <= i; j++) {
+            sum += nums[j];
+          }
+          totalSum += sum;
+        }
+        return totalSum;
+      };
+
+      const EachBox_1769 = () => {
+        answer = [];
+        n = [``];
+        boxes = n.length;
+
+        for (let i = 0; i < n.length - 1; i++) {
+          for (let j = 0; j < n.length - 1; j++) {
+            
+          }
+        }
+      };
+    </script>
+  </body>
+  <!-- let sum=0;
+    const sum_a = (arr) =>{
+        let s = 0; 
+        for(o of arr){
+            s+=o;
+        }      
+        return s;
+    };
+    for(let i = 0 ; i < nums.length; i++){
+        let start = Math.max(0, i - nums[i]);
+        sum+=sum_a(nums.slice(start, i+1));
+    };
+  
+    return sum;
+}; -->
+</html>

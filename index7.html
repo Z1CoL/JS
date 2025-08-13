@@ -12,144 +12,303 @@
   <body>
     <button class="button m-5" onclick="Adult();">Adult</button>
 
-    <button class="button m-5" onclick="printAll();">All</button>
+    <button class="button m-5" onclick="printAll();" id="">All</button>
+
+    <button class="button m-5" onclick="search();">Search</button>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>SureName</th>
+          <th>Name</th>
+          <th>gmail</th>
+          <th>score</th>
+          <th>username</th>
+        </tr>
+      </thead>
+      <tbody id="studentsList"></tbody>
+    </table>
 
     <table class="table is-bordered" id="studentsList"></table>
 
     <script>
       const students = [
-        { name: "Bat", surname: "Erdene", age: 25, birthday: "1999-03-14" },
-        { name: "Anu", surname: "Tungalag", age: 22, birthday: "2002-06-25" },
-        { name: "Bold", surname: "Dorj", age: 28, birthday: "1996-01-08" },
+        {
+          name: "Bat",
+          surname: "Erdene",
+          age: 25,
+          gmail: "bat.erdene@example.com",
+          hobbies: ["reading", "football", "traveling"],
+          score: 87,
+        },
+        {
+          name: "Anu",
+          surname: "Tungalag",
+          age: 22,
+          gmail: "anu.tungalag@example.com",
+          hobbies: ["drawing", "swimming", "photography"],
+          score: 92,
+        },
+        {
+          name: "Bold",
+          surname: "Dorj",
+          age: 28,
+          gmail: "bold.dorj@example.com",
+          hobbies: ["gaming", "cycling", "cooking"],
+          score: 75,
+        },
         {
           name: "Sarnai",
           surname: "Altangerel",
           age: 31,
-          birthday: "1993-11-02",
+          gmail: "sarnai.altangerel@example.com",
+          hobbies: ["yoga", "reading", "gardening"],
+          score: 81,
         },
         {
           name: "Temuulen",
           surname: "Ganzorig",
           age: 27,
-          birthday: "1997-04-19",
+          gmail: "temuulen.ganzorig@example.com",
+          hobbies: ["basketball", "traveling", "hiking"],
+          score: 66,
         },
-        { name: "Oyun", surname: "Delger", age: 24, birthday: "2000-09-12" },
+        {
+          name: "Oyun",
+          surname: "Delger",
+          age: 24,
+          gmail: "oyun.delger@example.com",
+          hobbies: ["singing", "writing", "painting"],
+          score: 90,
+        },
         {
           name: "Gantulga",
           surname: "Batsaikhan",
           age: 30,
-          birthday: "1994-02-05",
+          gmail: "gantulga.batsaikhan@example.com",
+          hobbies: ["chess", "reading", "camping"],
+          score: 78,
         },
-        { name: "Solongo", surname: "Purev", age: 26, birthday: "1998-07-21" },
+        {
+          name: "Solongo",
+          surname: "Purev",
+          age: 26,
+          gmail: "solongo.purev@example.com",
+          hobbies: ["dancing", "cooking", "movies"],
+          score: 84,
+        },
         {
           name: "Munkhbat",
           surname: "Enkhbayar",
           age: 33,
-          birthday: "1991-10-15",
+          gmail: "munkhbat.enkhbayar@example.com",
+          hobbies: ["hiking", "gardening", "swimming"],
+          score: 71,
         },
-        { name: "Enkhzul", surname: "Sukh", age: 21, birthday: "2003-05-30" },
+        {
+          name: "Enkhzul",
+          surname: "Sukh",
+          age: 21,
+          gmail: "enkhzul.sukh@example.com",
+          hobbies: ["reading", "volleyball", "traveling"],
+          score: 95,
+        },
         {
           name: "Tuvshin",
           surname: "Narangerel",
           age: 29,
-          birthday: "1995-12-01",
+          gmail: "tuvshin.narangerel@example.com",
+          hobbies: ["photography", "cycling", "camping"],
+          score: 64,
         },
         {
           name: "Khulan",
           surname: "Erkhembayar",
           age: 23,
-          birthday: "2001-08-10",
+          gmail: "khulan.erkhembayar@example.com",
+          hobbies: ["yoga", "dancing", "reading"],
+          score: 89,
         },
-        { name: "Bilegt", surname: "Altan", age: 32, birthday: "1992-03-28" },
+        {
+          name: "Bilegt",
+          surname: "Altan",
+          age: 32,
+          gmail: "bilegt.altan@example.com",
+          hobbies: ["basketball", "football", "swimming"],
+          score: 82,
+        },
         {
           name: "Uugantsetseg",
           surname: "Buyandelger",
           age: 25,
-          birthday: "1999-06-17",
+          gmail: "uugantsetseg.buyandelger@example.com",
+          hobbies: ["singing", "movies", "traveling"],
+          score: 73,
         },
         {
           name: "Erdenebat",
           surname: "Munkhjargal",
           age: 34,
-          birthday: "1990-02-09",
+          gmail: "erdenebat.munkhjargal@example.com",
+          hobbies: ["reading", "cycling", "photography"],
+          score: 80,
         },
-        { name: "Nomin", surname: "Chuluun", age: 20, birthday: "2004-09-27" },
+        {
+          name: "Nomin",
+          surname: "Chuluun",
+          age: 20,
+          gmail: "nomin.chuluun@example.com",
+          hobbies: ["dancing", "painting", "swimming"],
+          score: 96,
+        },
         {
           name: "Batbayar",
           surname: "Gantumur",
           age: 27,
-          birthday: "1997-11-13",
+          gmail: "batbayar.gantumur@example.com",
+          hobbies: ["camping", "movies", "chess"],
+          score: 77,
         },
         {
           name: "Tsetseg",
           surname: "Erdenechimeg",
           age: 28,
-          birthday: "1996-04-06",
+          gmail: "tsetseg.erdenechimeg@example.com",
+          hobbies: ["writing", "yoga", "reading"],
+          score: 88,
         },
         {
           name: "Ulzii",
           surname: "Purevdorj",
           age: 26,
-          birthday: "1998-12-19",
+          gmail: "ulzii.purevdorj@example.com",
+          hobbies: ["traveling", "photography", "hiking"],
+          score: 70,
         },
-        { name: "Amar", surname: "Dorjbat", age: 31, birthday: "1993-08-03" },
+        {
+          name: "Amar",
+          surname: "Dorjbat",
+          age: 31,
+          gmail: "amar.dorjbat@example.com",
+          hobbies: ["basketball", "gaming", "camping"],
+          score: 79,
+        },
         {
           name: "Enkhmaa",
           surname: "Lkhagvasuren",
           age: 22,
-          birthday: "2002-10-22",
+          gmail: "enkhmaa.lkhagvasuren@example.com",
+          hobbies: ["singing", "drawing", "reading"],
+          score: 85,
         },
         {
           name: "Chinbat",
           surname: "Otgonbayar",
           age: 24,
-          birthday: "2000-01-16",
+          gmail: "chinbat.otgonbayar@example.com",
+          hobbies: ["cycling", "movies", "basketball"],
+          score: 91,
         },
-        { name: "Delger", surname: "Galsan", age: 33, birthday: "1991-05-07" },
+        {
+          name: "Delger",
+          surname: "Galsan",
+          age: 33,
+          gmail: "delger.galsan@example.com",
+          hobbies: ["hiking", "yoga", "gardening"],
+          score: 76,
+        },
         {
           name: "Bayasgalan",
           surname: "Tserendorj",
           age: 29,
-          birthday: "1995-07-29",
+          gmail: "bayasgalan.tserendorj@example.com",
+          hobbies: ["reading", "writing", "photography"],
+          score: 83,
         },
         {
           name: "Sodnom",
           surname: "Erdenetuya",
           age: 30,
-          birthday: "1994-09-04",
+          gmail: "sodnom.erdenetuya@example.com",
+          hobbies: ["camping", "basketball", "swimming"],
+          score: 68,
         },
       ];
 
-      let All = "";
+      let output = "";
+
+      for (let i = 0; i < students.length; i++) {
+        const username = students[i].gmail.split("@")[0];
+        output =
+          output +
+          `
+          <tr>
+            <td>${students[i].surname}</td>
+            <td>${students[i].name}</td>
+            <td>${students[i].gmail}</td>
+            <td>${students[i].score}</td>
+            <td>${username}</td>
+          </tr>
+          `;
+      }
+
+      document.getElementById("studentsList").innerHTML = output;
+
+      /*      let All = "";
       let dult = "";
-      function printAll() {
+      const printAll = () => {
         for (let i = 0; i < students.length; i++) {
+          const username = students[i].gmail.split("@")[0];
           All += `
-            <tr>
+              <tr>
                 <td>${students[i].name}</td>
                 <td>${students[i].surname}</td>
                 <td>${students[i].age}</td>
-            </tr>    
+                <td>${students[i].score}</td>
+                <td>${students[i].gmail}</td>
+                <td>${username}</td>
+              </tr>
             `;
         }
         document.getElementById("studentsList").innerHTML = All;
-      }
+      };
 
-      function Adult() {
+      const search = () => {
+        const query = prompt("Search query");
+        for (let z = 0; z < students.length; z++) {
+          if (students[z].name.startsWith(query)) {
+            const username = students[i].gmail.split("@")[0];
+            dult += `
+                  <tr>
+                      <td>${students[z].name}</td>
+                      <td>${students[z].surname}</td>
+                      <td>${students[z].age}</td>
+                      <td>${students[z].score}</td>
+                      <td>${students[z].gmail}</td>
+                  </tr>
+                  `;
+          }
+        }
+      };
+
+      const Adult = () => {
         for (let z = 0; z < students.length; z++) {
           if (students[z].age >= 25) {
+            const username = students[i].gmail.split("@")[0];
             dult += `
-            <tr>
-                <td>${students[z].name}</td>
-                <td>${students[z].surname}</td>
-                <td>${students[z].age}</td>
-            </tr>
-            `;
+                  <tr>
+                      <td>${students[z].name}</td>
+                      <td>${students[z].surname}</td>
+                      <td>${students[z].age}</td>
+                      <td>${students[z].score}</td>
+                      <td>${students[z].gmail}</td>
+                  </tr>
+                  `;
           }
         }
         document.getElementById("studentsList").innerHTML = dult;
-      }
-      printAll();
+      };
+      printAll();   */
     </script>
   </body>
 </html>
