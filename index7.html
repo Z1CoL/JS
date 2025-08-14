@@ -10,9 +10,9 @@
     />
   </head>
   <body>
-    <button class="button m-5" onclick="Adult();">Adult</button>
+    <button class="button m-5" onclick="dult();" id="">Adult</button>
 
-    <button class="button m-5" onclick="printAll();" id="">All</button>
+    <button class="button m-5" onclick="All();" id="">All</button>
 
     <button class="button m-5" onclick="search();">Search</button>
 
@@ -21,9 +21,10 @@
         <tr>
           <th>SureName</th>
           <th>Name</th>
-          <th>gmail</th>
-          <th>score</th>
-          <th>username</th>
+          <th>Age</th>
+          <th>Gmail</th>
+          <th>Score</th>
+          <th>Username</th>
         </tr>
       </thead>
       <tbody id="studentsList"></tbody>
@@ -235,24 +236,65 @@
         },
       ];
 
-      let output = "";
-
-      for (let i = 0; i < students.length; i++) {
-        const username = students[i].gmail.split("@")[0];
-        output =
-          output +
-          `
-          <tr>
-            <td>${students[i].surname}</td>
-            <td>${students[i].name}</td>
-            <td>${students[i].gmail}</td>
-            <td>${students[i].score}</td>
+      function generate(student) {
+        const result = `
+        <tr>
+            <td>${student.surname}</td>
+            <td>${student.name}</td>
+            <td>${student.age}</td>
+            <td>${student.gmail}</td>
+            <td>${student.score}</td>
             <td>${username}</td>
-          </tr>
-          `;
+          </tr>`;
+        return result;
       }
 
-      document.getElementById("studentsList").innerHTML = output;
+      const search = () => {
+        const query = prompt("Search query");
+
+        let output = "";
+        for (let z = 0; z < students.length; z++) {
+          if (students[z].name.startsWith(query)) {
+            const username = student[z].gmail.split("@")[0];
+            output += generate(students[z]);
+          }
+        }
+        document.getElementById("studentsList").innerHTML = output;
+      };
+
+      const All = () => {
+        let output = "";
+        for (let i = 0; i < students.length; i++) {
+          // const username = students[i].gmail.split("@")[0];
+          output += generate(students[i]);
+        }
+        document.getElementById("studentsList").innerHTML = output;
+      };
+      All();
+
+      const dult = () => {
+        let output = "";
+
+        for (let z = 0; z < students.length; z++) {
+          if (students[z].age > 30) {
+            const username = students[z].gmail.split("@")[0];
+            output =
+              output +
+              `
+            <tr>
+              <td>${students[z].surname}</td>
+              <td>${students[z].name}</td>
+              <td>${students[z].age}</td>   
+              <td>${students[z].gmail}</td>
+              <td>${students[z].score}</td>
+              <td>${username}</td>
+            </tr>
+          `;
+          }
+        }
+
+        document.getElementById("studentsList").innerHTML = output;
+      };
 
       /*      let All = "";
       let dult = "";
