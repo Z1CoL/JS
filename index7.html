@@ -236,9 +236,9 @@
         },
       ];
 
-      function generate(student) {
-        const result = `
-        <tr>
+      function generate(i, student) {
+        const username = student.gmail.split("@")[0];
+        return `<tr>
             <td>${student.surname}</td>
             <td>${student.name}</td>
             <td>${student.age}</td>
@@ -246,17 +246,15 @@
             <td>${student.score}</td>
             <td>${username}</td>
           </tr>`;
-        return result;
       }
 
       const search = () => {
         const query = prompt("Search query");
 
         let output = "";
-        for (let z = 0; z < students.length; z++) {
-          if (students[z].name.startsWith(query)) {
-            const username = student[z].gmail.split("@")[0];
-            output += generate(students[z]);
+        for (let i = 0; i < students.length; i++) {
+          if (students[i].name.startsWith(query)) {
+            output += generate(i, students[i]);
           }
         }
         document.getElementById("studentsList").innerHTML = output;
@@ -265,92 +263,24 @@
       const All = () => {
         let output = "";
         for (let i = 0; i < students.length; i++) {
-          // const username = students[i].gmail.split("@")[0];
-          output += generate(students[i]);
+          output += generate(i, students[i]);
         }
         document.getElementById("studentsList").innerHTML = output;
       };
+
       All();
 
       const dult = () => {
         let output = "";
 
-        for (let z = 0; z < students.length; z++) {
-          if (students[z].age > 30) {
-            const username = students[z].gmail.split("@")[0];
-            output =
-              output +
-              `
-            <tr>
-              <td>${students[z].surname}</td>
-              <td>${students[z].name}</td>
-              <td>${students[z].age}</td>   
-              <td>${students[z].gmail}</td>
-              <td>${students[z].score}</td>
-              <td>${username}</td>
-            </tr>
-          `;
+        for (let i = 0; i < students.length; i++) {
+          if (students[i].age > 30) {
+            output += generate(i, students[i]);
           }
         }
 
         document.getElementById("studentsList").innerHTML = output;
       };
-
-      /*      let All = "";
-      let dult = "";
-      const printAll = () => {
-        for (let i = 0; i < students.length; i++) {
-          const username = students[i].gmail.split("@")[0];
-          All += `
-              <tr>
-                <td>${students[i].name}</td>
-                <td>${students[i].surname}</td>
-                <td>${students[i].age}</td>
-                <td>${students[i].score}</td>
-                <td>${students[i].gmail}</td>
-                <td>${username}</td>
-              </tr>
-            `;
-        }
-        document.getElementById("studentsList").innerHTML = All;
-      };
-
-      const search = () => {
-        const query = prompt("Search query");
-        for (let z = 0; z < students.length; z++) {
-          if (students[z].name.startsWith(query)) {
-            const username = students[i].gmail.split("@")[0];
-            dult += `
-                  <tr>
-                      <td>${students[z].name}</td>
-                      <td>${students[z].surname}</td>
-                      <td>${students[z].age}</td>
-                      <td>${students[z].score}</td>
-                      <td>${students[z].gmail}</td>
-                  </tr>
-                  `;
-          }
-        }
-      };
-
-      const Adult = () => {
-        for (let z = 0; z < students.length; z++) {
-          if (students[z].age >= 25) {
-            const username = students[i].gmail.split("@")[0];
-            dult += `
-                  <tr>
-                      <td>${students[z].name}</td>
-                      <td>${students[z].surname}</td>
-                      <td>${students[z].age}</td>
-                      <td>${students[z].score}</td>
-                      <td>${students[z].gmail}</td>
-                  </tr>
-                  `;
-          }
-        }
-        document.getElementById("studentsList").innerHTML = dult;
-      };
-      printAll();   */
     </script>
   </body>
 </html>
